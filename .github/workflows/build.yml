@@ -66,10 +66,10 @@ jobs:
     - name: Downloading source code
       run: |
         source halium.env
-        mkdir -p /home/runner/work/ubports-ci-4a/halium
-        cd /home/runner/work/ubports-ci-4a/halium
+        mkdir -p /home/runner/work/ubports-ci-4a/ubports-ci-4a/halium
+        cd /home/runner/work/ubports-ci-4a/ubports-ci-4a/halium
         repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1
-        mkdir -p /home/runner/work/ubports-ci-4a/halium/.repo/local_manifests
+        mkdir -p /home/runner/work/ubports-ci-4a/ubports-ci-4a/halium/.repo/local_manifests
         wget https://raw.githubusercontent.com/Halium/halium-devices/halium-7.1/manifests/"$VENDOR"_"$DEVICE".xml -O $ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml
         repo sync -j8 -c --no-clone-bundle --no-tags
     
@@ -87,22 +87,22 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: hybris-boot image
-        path: /home/runner/work/ubports-ci-4a/halium/out/target/product/rolex/hybris-boot.img
+        path: /home/runner/work/ubports-ci-4a/ubports-ci-4a/halium/out/target/product/rolex/hybris-boot.img
 
     - name : Upload boot image
       uses: actions/upload-artifact@master
       with:
         name: halium-boot image
-        path: /home/runner/work/ubports-ci-4a/halium/out/target/product/rolex/halium-boot.img
+        path: /home/runner/work/ubports-ci-4a/ubports-ci-4a/halium/out/target/product/rolex/halium-boot.img
 
     - name : Upload recovery image
       uses: actions/upload-artifact@master
       with:
         name: Recovery image
-        path: /home/runner/work/ubports-ci-4a/halium//out/target/product/rolex/recovery.img
+        path: /home/runner/work/ubports-ci-4a/ubports-ci-4a/halium//out/target/product/rolex/recovery.img
 
     - name : Upload system image
       uses: actions/upload-artifact@master
       with:
         name: System image
-        path: /home/runner/work/ubports-ci-4a/halium/out/target/product/rolex/system.img
+        path: /home/runner/work/ubports-ci-4a/ubports-ci-4a/halium/out/target/product/rolex/system.img

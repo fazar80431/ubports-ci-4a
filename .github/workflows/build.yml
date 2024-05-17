@@ -23,7 +23,7 @@ jobs:
     env:
       VENDOR: xiaomi
       DEVICE: rolex
-      ANDROID_ROOT: /home/runner/work/halium/
+      ANDROID_ROOT: /home/runner/work/ubports-ci-4a/halium/
 
     steps:
     

@@ -23,7 +23,6 @@ jobs:
     env:
       VENDOR: xiaomi
       DEVICE: rolex
-      ANDROID_ROOT: /home/runner/work/ubports-ci-4a/halium/
 
     steps:
     
@@ -67,10 +66,10 @@ jobs:
     - name: Downloading source code
       run: |
         source halium.env
-        mkdir -p $ANDROID_ROOT
-        cd $ANDROID_ROOT
+        mkdir -p /home/runner/work/ubports-ci-4a/halium
+        cd /home/runner/work/ubports-ci-4a/halium
         repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1
-        mkdir -p $ANDROID_ROOT/.repo/local_manifests
+        mkdir -p /home/runner/work/ubports-ci-4a/halium/.repo/local_manifests
         wget https://raw.githubusercontent.com/Halium/halium-devices/halium-7.1/manifests/"$VENDOR"_"$DEVICE".xml -O $ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml
         repo sync -j8 -c --no-clone-bundle --no-tags
     

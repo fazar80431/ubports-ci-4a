@@ -1,6 +1,6 @@
 #!/bin/bash
 source halium.env
-cd /home/runner/work/ubports-ci-4a/halium/
+cd /home/runner/work/ubports-ci-4a/halium
 
 source build/envsetup.sh
 export USE_CCACHE=1

@@ -83,7 +83,7 @@ jobs:
         bash -x build-hal.sh
       shell: bash
     
-    - name : Upload boot image
+    - name : Upload Hybris-Boot image
       uses: actions/upload-artifact@master
       with:
         name: hybris-boot image
@@ -100,6 +100,12 @@ jobs:
       with:
         name: Recovery image
         path: /home/runner/work/ubports-ci-4a/ubports-ci-4a/halium//out/target/product/rolex/recovery.img
+
+    - name : Upload Hybris-Recovery image
+      uses: actions/upload-artifact@master
+      with:
+        name: hybris-boot image
+        path: /home/runner/work/ubports-ci-4a/ubports-ci-4a/halium/out/target/product/rolex/hybris-recovery.img
 
     - name : Upload system image
       uses: actions/upload-artifact@master
